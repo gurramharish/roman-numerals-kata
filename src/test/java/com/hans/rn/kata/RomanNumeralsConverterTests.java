@@ -17,10 +17,9 @@ public class RomanNumeralsConverterTests {
 
     @DisplayName("Roman numerals I, V, X Tests")
     @ParameterizedTest(name = "Input: {0}, Expected: {1}")
-    @CsvSource({"I, 1", "V, 5", "X, 10"})
+    @CsvSource({"I, 1", "V, 5", "X, 10", "II, 2", "III, 3", "VI, 6"})
     public void convertsSingleRomanDigit(String input, int expected) {
-        int arabic = RomanNumeralsConverter.convert(input);
-        assertEquals(expected, arabic);
+        assertEquals(expected, RomanNumeralsConverter.convert(input));
     }
 
 }
